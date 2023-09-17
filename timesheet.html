@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table Example</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>August 2023</h1>
+  <table border="1">
+    <thead>
+      
+      <tr>
+        <th>Header</th>
+        <!-- Add headers for columns 1 to 31 -->
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+        <th>11</th>
+        <th>12</th>
+        <th>13</th>
+        <th>14</th>
+        <th>15</th>
+        <th>16</th>
+        <th>17</th>
+        <th>18</th>
+        <th>19</th>
+        <th>20</th>
+        <th>21</th>
+        <th>22</th>
+        <th>23</th>
+        <th>24</th>
+        <th>25</th>
+        <th>26</th>
+        <th>27</th>
+        <th>28</th>
+        <th>29</th>
+        <th>30</th>
+        <th>31</th>
+      </tr>
+      <!-- Add a row for the day number (1 to 31) below the header -->
+      <tr>
+        <th>Day</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+      </tr>
+    </thead>
+      <tbody id="table-body">
+        <!-- JavaScript will populate the rows here -->
+      </tbody>
+    </table>
+
+    <script>
+        // Function to create a row with editable cells and a dropdown box for the day cell
+        function createEditableRow(dayOptions) {
+          const row = document.createElement('tr');
+          for (let i = 0; i <= 31; i++) {
+            const cell = document.createElement('td');
+    
+            if (i === 0) {
+              // Day cell (first cell in the row)
+              const select = document.createElement('select');
+              dayOptions.forEach((option) => {
+                const optionElement = document.createElement('option');
+                optionElement.textContent = option;
+                select.appendChild(optionElement);
+              });
+              cell.appendChild(select);
+            } else {
+              // Other cells in the row
+              const input = document.createElement('input');
+              input.type = 'text';
+              input.value = ''; // Set the initial value to be empty
+              cell.appendChild(input);
+            }
+    
+            row.appendChild(cell);
+          }
+          return row;
+        }
+    
+        // Get the table body element
+        const tableBody = document.getElementById('table-body');
+    
+        // Array of options for the day dropdown box
+        const dayOptions = ['Row 1', 'Row 2', 'Row 3', 'Row 4', 'Row 5', 'Row 6', 'Row 7', 'Row 8', 'Row 9', 'Row 10',
+                            'Row 11', 'Row 12', 'Row 13', 'Row 14', 'Row 15', 'Row 16', 'Row 17', 'Row 18', 'Row 19', 'Row 20',
+                            'Row 21', 'Row 22', 'Row 23', 'Row 24', 'Row 25', 'Row 26', 'Row 27', 'Row 28', 'Row 29', 'Row 30',
+                            'Row 31'];
+    
+        // Generate rows for each day of the month
+        for (let day = 1; day <= 31; day++) {
+          const row = createEditableRow(dayOptions);
+    
+          // Set the selected option in the day dropdown box
+          const dayCell = row.children[0].querySelector('select');
+          dayCell.value = `Row ${day}`;
+    
+          tableBody.appendChild(row);
+        }
+      </script>
+    </body>
+    </html>

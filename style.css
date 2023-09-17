@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    background-color: #f0f0f0; /* Silver color for the table background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  th.header,
+  th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th.header {
+    background-color: #1e90ff; /* Blue color for header row */
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  th {
+    background-color: #222; /* Black color for other header cells */
+    color: #fff;
+  }
+  
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background-color: #f8f8f8; /* Light gray color for cells */
+    color: #333;
+  }
+  
+  select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f0f0f0; /* Silver color for dropdown box background */
+    color: #333;
+  }
+  
+  /* Custom styles for the dropdown arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  
+  select::-webkit-contacts-auto-fill-button,
+  select::-webkit-credentials-auto-fill-button {
+    display: none;
+  }
+  
